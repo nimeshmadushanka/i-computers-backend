@@ -1,6 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";    
-import studentRouter from "./routers/studentRouter.js";
+//import studentRouter from "./routers/studentRouter.js";
 import userRouter from "./routers/userRouer.js";
 import authonticateUser from "./middleWares/athentication.js";
 import productRouter from "./routers/productRouter.js";
