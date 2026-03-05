@@ -22,7 +22,7 @@ app.use("/users",userRouter)
 
 app.use(authonticateUser)
     
-app.use("/student",studentRouter)
+//app.use("/student",studentRouter)
 app.use("/Product",productRouter)
 
 
