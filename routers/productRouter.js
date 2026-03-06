@@ -5,11 +5,12 @@ const productRouter = express.Router();
 
 productRouter.get("/",getAllProduct)
 productRouter.post("/",createProduct)
-productRouter.delete("/:productId",deleteProduct)
-productRouter.put("/:productId",updateProduct)
-productRouter.get("/:productId",getProductById)
 productRouter.get("/search",()=>{
     console.log("Search API")
 })
+productRouter.delete("/:productId",deleteProduct)
+productRouter.put("/:productId",updateProduct)
+productRouter.get("/:productId",getProductById)
+
 
 export default productRouter;
