@@ -4,10 +4,13 @@ import mongoose from "mongoose";
 import userRouter from "./routers/userRouer.js";
 import authonticateUser from "./middleWares/athentication.js";
 import productRouter from "./routers/productRouter.js";
+import cors from "cors";
+import Dotenv from "dotenv";
+
+Dotenv.config()
 
 const app = express();
-const mongourl = "mongodb+srv://admin:1234@cluster0.bqlq6c1.mongodb.net/icomputer?appName=Cluster0"
- 
+const mongourl = process.env.MONGO_URI
 mongoose.connect(mongourl).then(
 
     ()=>(
@@ -15,6 +18,7 @@ mongoose.connect(mongourl).then(
     )
 )
 //middlewear name express.josn
+app.use(cors());
 
 app.use(express.json() );
 
