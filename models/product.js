@@ -22,7 +22,7 @@ const productSchema = new mongoose.Schema(
         type : Number,
         required : true
     },
-    labelledProce:{
+    labelledPrice:{
         type : Number,
         required : true
     },
@@ -49,7 +49,7 @@ const productSchema = new mongoose.Schema(
         type : String,
         required : true,
     },
-    isAvailble : {
+    isAvailable : {
         type : Boolean,
         required : true,
         default : true,

@@ -28,12 +28,13 @@ export async function createProduct (req,res){
                 name : req.body.name,
                 altNames : req.body.altNames,
                 price : req.body.price,
-                labelledProce : req.body.labelledProce,
+                labelledPrice : req.body.labelledPrice,
                 description : req.body.description,
                 images  : req.body.images,
                 brand : req.body.brand,
                 model : req.body.model,
                 category : req.body.category,
+                isAvailable : req.body.isAvailable,
                 stock : req.body.stock
             })
 
@@ -64,7 +65,7 @@ export async function getAllProduct(req,res) {
     }
         else{
 
-            const products = await Product.find({isAvailble : true})
+            const products = await Product.find({isAvailable : true})
             res.json(products)
         }
 
@@ -115,13 +116,13 @@ export async function updateProduct(req,res)
                 name : req.body.name,
                 altNames : req.body.altNames,
                 price : req.body.price,
-                labelledProce : req.body.labelledProce,
+                labelledPrice : req.body.labelledPrice,
                 description : req.body.description,
                 images  : req.body.images,
                 brand : req.body.brand,
                 model : req.body.model,
                 category : req.body.category,
-                isAvailble : req.body.isAvailble,
+                isAvailable : req.body.isAvailable,
                 stock : req.body.stock
         })
 
@@ -149,7 +150,7 @@ try{
             message : "Prodcut Not Found"
         })
     }else{
-        if(product.isAvailble){
+        if(product.isAvailable){
             res.json(product)
         }else{
             if(isAdmin(req)){

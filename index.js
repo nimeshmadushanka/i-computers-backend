@@ -22,12 +22,12 @@ app.use(cors());
 
 app.use(express.json() );
 
-app.use("/users",userRouter)
+app.use("/api/users",userRouter)
 
 app.use(authonticateUser)
     
 //app.use("/student",studentRouter)
-app.use("/Product",productRouter)
+app.use("/api/products",productRouter)
 
 
 app.listen(3000, (req,res) => {
